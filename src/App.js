@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Card from "./components/Card/Card";
 
 const App = () => {
   const [error, setError] = useState(null);
@@ -30,9 +31,7 @@ const App = () => {
     return (
       <ul>
         {items.data.map(item => (
-          <li key={item.id}>
-            {item.breed} {item.origin}
-          </li>
+         <Card catBreed={item}></Card>
         ))}
       </ul>
     );
