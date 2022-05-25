@@ -23,6 +23,29 @@ const App = () => {
       );
   }, []);
 
+  return (
+    <div>
+      <h1 className="text-xl font-bold">Cat Breeds</h1>
+      {/* EITHER l'erreur */}
+      {error && (
+        <>
+          <h2 className="text-xl font-bold">An error occured</h2>
+          <p className="text-red-700">Error : {error.message}</p>
+        </>
+      )}
+      {/* EITHER le loading */}
+      {!isLoaded ? (
+        <h2 className="text-xl text-center font-bold">Loading...</h2>
+      ) : (
+        <div className="grid grid-cols-3">
+          {/* EITHER : L'affichage des données */}
+          {items.data.map((item) => (
+            <Card catBreed={item}></Card>
+          ))}
+        </div>
+      )}
+    </div>
+  );
   // comment here
   if (error) {
     return (
@@ -38,10 +61,12 @@ const App = () => {
   } else {
     return (
       <div>
-        <h1>Cat breeds!</h1>
-        {items.data.map((item) => (
-          <Card catBreed={item}></Card>
-        ))}
+        <h1 className="text-center">Cat breeds!</h1>
+        <div className="grid grid-cols-3">
+          {items.data.map((item) => (
+            <Card catBreed={item}></Card>
+          ))}
+        </div>
       </div>
     );
   }
