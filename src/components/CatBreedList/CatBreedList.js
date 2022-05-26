@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
+import CardList from "../CardList/CardList";
 import ErrorComponent from "../ErrorComponent/ErrorComponent";
 
 const CatBreedList = () => {
@@ -26,21 +27,14 @@ const CatBreedList = () => {
 
   return (
     <div>
-      {error && (
-        <ErrorComponent erreur={error}/>
-      )}
+      {error && <ErrorComponent erreur={error} />}
       {!isLoaded ? (
         <h2 className="text-xl text-center font-bold">Loading...</h2>
       ) : (
-        <div className="grid grid-cols-3">
-          {/* EITHER : L'affichage des données */}
-          {items.data.map((item, index) => (
-            <Card catBreed={item} key={index}></Card>
-          ))}
-        </div>
+        <CardList items={items} />
       )}
     </div>
   );
 };
 
-export default CatBreedList
+export default CatBreedList;
