@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
+import ErrorComponent from "../ErrorComponent/ErrorComponent";
 
 const CatBreedList = () => {
   // vars
@@ -26,10 +27,7 @@ const CatBreedList = () => {
   return (
     <div>
       {error && (
-        <>
-          <h2 className="text-xl font-bold">An error occured</h2>
-          <p className="text-red-700">Error : {error.message}</p>
-        </>
+        <ErrorComponent erreur={error}/>
       )}
       {!isLoaded ? (
         <h2 className="text-xl text-center font-bold">Loading...</h2>
