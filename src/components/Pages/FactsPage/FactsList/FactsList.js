@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ErrorComponent from "../../../ErrorComponent/ErrorComponent";
+import Facts from "../Facts/Facts";
 
 const FactsList = () =>{
     const [error, setError] = useState(null);
@@ -27,8 +28,9 @@ const FactsList = () =>{
             {!isLoaded ? (
             <h2 className="text-xl text-center font-bold">Loading...</h2>
             ) : (
-                <p>items</p>
-            // <CardList items={items} />
+                items.data.map((item, index) => (
+                    <Facts key={index} index={index} fact={item.fact}/>
+                ))
             )}
         </div>
     );
