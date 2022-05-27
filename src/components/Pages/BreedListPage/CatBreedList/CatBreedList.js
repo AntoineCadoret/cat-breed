@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Card from "../Card/Card";
 import CardList from "../CardList/CardList";
-import ErrorComponent from "../ErrorComponent/ErrorComponent";
+import ErrorComponent from "../../../ErrorComponent/ErrorComponent";
 
 const CatBreedList = () => {
   // vars
