@@ -1,4 +1,4 @@
 const Facts = ({index, fact}, props) =>{
-    return(<p key={index} className="m-2">{index+1}. {fact}</p>);
+    return(<p key={index} className="mx-5 my-7 text-slate-800"><span className="font-bold">{index+1}.</span> {fact}</p>);
 };
 export default Facts;

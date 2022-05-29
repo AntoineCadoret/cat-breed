@@ -26,7 +26,7 @@ const CatBreedList = () => {
 
   return (
     <div>
-      {error && <ErrorComponent erreur={error} />}
+      {error && <ErrorComponent error={error} />}
       {!isLoaded ? (
         <h2 className="text-xl text-center font-bold">Loading...</h2>
       ) : (

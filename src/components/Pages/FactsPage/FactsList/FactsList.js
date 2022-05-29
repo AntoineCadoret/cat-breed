@@ -23,8 +23,7 @@ const FactsList = () =>{
       }, []);
     return(
         <div>
-            <h2>FactsList</h2>
-            {error && <ErrorComponent erreur={error} />}
+            {error && <ErrorComponent error={error} />}
             {!isLoaded ? (
             <h2 className="text-xl text-center font-bold">Loading...</h2>
             ) : (
