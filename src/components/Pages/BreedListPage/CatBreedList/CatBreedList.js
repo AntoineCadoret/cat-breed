@@ -8,7 +8,7 @@ const CatBreedList = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
-  // comment here
+  // API call getting the cat breeds
   useEffect(() => {
     fetch("https://catfact.ninja/breeds")
       .then((response) => response.json())

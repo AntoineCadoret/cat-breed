@@ -8,6 +8,7 @@ const FactsList = () =>{
     const [items, setItems] = useState([]);
     
     useEffect(() => {
+        // API call to get all the facts about cats
         fetch("https://catfact.ninja/facts")
           .then((response) => response.json())
           .then(
@@ -23,7 +24,9 @@ const FactsList = () =>{
       }, []);
     return(
         <div>
+            {/* Show the error component if there is an error with the API call*/}
             {error && <ErrorComponent error={error} />}
+            {/* Show the facts list */}
             {!isLoaded ? (
             <h2 className="text-xl text-center font-bold">Loading...</h2>
             ) : (
